@@ -15,6 +15,6 @@ public static final double MAX_MOTOR_SPEED = 0.9;
 
 public static final int BALL_IN_FEED_ELEVATOR = 4;
 
-
+public static final int TURRET = 5;
 
 }
