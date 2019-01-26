@@ -10,6 +10,7 @@ private static VictorSP chassisLeftSlave;
 private static VictorSP chassisRightMaster;
 private static VictorSP chassisRightSlave;
 private static VictorSP ballInFeedElevator;
+private static VictorSP turret;
 
 public static void init() {
 
@@ -18,6 +19,7 @@ chassisLeftSlave = new VictorSP(Constants.CHASSIS_LEFT_SLAVE);
 chassisRightMaster = new VictorSP(Constants.CHASSIS_RIGHT_MASTER);
 chassisRightSlave = new VictorSP(Constants.CHASSIS_RIGHT_SLAVE);
 ballInFeedElevator = new VictorSP(Constants.BALL_IN_FEED_ELEVATOR);
+turret = new VictorSP(Constants.TURRET);
 
 }
 
@@ -36,6 +38,9 @@ public static VictorSP getChassisRightSlave() {
 
 public static VictorSP getBallInFeedElevator() {
     return ballInFeedElevator;
+}
+public static VictorSP getTurret() {
+    return turret;
 }
 
 

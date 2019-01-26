@@ -94,6 +94,8 @@ public class Robot extends IterativeRobot {
       Drive.tankdrive(Gamepad.primary.getLeftY(), Gamepad.primary.getRightX());
       
       Elevator.elevator(Gamepad.secondary.getLeftY());
+
+      Turret.turret(Gamepad.secondary.getRightX());
       
 
   }
