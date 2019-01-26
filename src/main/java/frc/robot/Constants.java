@@ -19,5 +19,6 @@ public static final double MAX_MOTOR_SPEED = 0.9;
 
 public static final double SHOOTER_STOP = 0.0;
 
+public static final int RAMP_TIP_MOTOR = 10;
 
 }

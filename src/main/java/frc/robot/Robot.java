@@ -96,6 +96,8 @@ public class Robot extends IterativeRobot {
       Turret.turret(Gamepad.secondary.getRightX());
       
       Shooter.shoot(Gamepad.secondary.getRightTrigger());
+
+      RampTip.tip(Gamepad.secondary.getRightY());
   
   }
 

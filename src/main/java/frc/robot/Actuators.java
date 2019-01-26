@@ -13,6 +13,7 @@ private static VictorSP ballInFeedElevator;
 private static VictorSP turret;
 private static VictorSP shooterTop;
 private static VictorSP shooterBottom;
+private static VictorSP rampTipMotor;
 
 public static void init() {
 
@@ -24,6 +25,7 @@ ballInFeedElevator = new VictorSP(Constants.BALL_IN_FEED_ELEVATOR);
 turret = new VictorSP(Constants.TURRET);
 shooterTop = new VictorSP(Constants.SHOOTER_TOP);
 shooterBottom = new VictorSP(Constants.SHOOTER_BOTTOM);
+rampTipMotor = new VictorSP(Constants.RAMP_TIP_MOTOR);
 
 }
 
@@ -53,6 +55,10 @@ public static VictorSP getShooterTop() {
 
 public static VictorSP getShooterBottom() {
     return shooterBottom;
+}
+
+public static VictorSP getRampTipMotor() {
+    return rampTipMotor;
 }
 
 }
