@@ -89,8 +89,6 @@ public class Robot extends IterativeRobot {
    */
   @Override
   public void teleopPeriodic() {
-      Gamepad.update();
-
       Drive.tankdrive(Gamepad.primary.getLeftY(), Gamepad.primary.getRightX());
       
       Elevator.elevator(Gamepad.secondary.getLeftY());

@@ -5,8 +5,6 @@ import edu.wpi.first.wpilibj.Joystick;
 
 public class Gamepad {
 	private Joystick joy;
-	private Presses press;
-
 	//// CONSTANTS -------------------------------------------------------------
 	/**
 	 * Primary Driver Controller Port Number.
@@ -88,7 +86,7 @@ public class Gamepad {
 
 	// Constructor
 	/**
-	 * Creates new Joystick instance and Presses instance on the correct driver
+	 * Creates new Joystick instance on the correct driver
 	 * port.
 	 *
 	 * @param port
@@ -96,33 +94,12 @@ public class Gamepad {
 	 */
 	private Gamepad(int port) {
 		joy = new Joystick(port);
-		try {
-			press = new Presses(this);
-			press.init();
-		} catch (ClassNotFoundException e) {
-			System.out.println("Failed to initialize presses.");
-		}
 	}
 
 	// initializes the primary and secondary drivers
 	public static void init() {
 		primary = new Gamepad(PRIMARY_DRIVER);
 		secondary = new Gamepad(SECONDARY_DRIVER);
-	}
-
-	// updates the number of presses for all the buttons of a given instance
-	private void updatePress() {
-		try {
-			press.updatePresses();
-		} catch (Exception e) {
-			System.out.println("Failed to update presses");
-		}
-	}
-
-	// updates both instances
-	public static void update() {
-		Gamepad.primary.updatePress();
-		Gamepad.secondary.updatePress();
 	}
 
 	// deadzoning
@@ -204,44 +181,6 @@ public class Gamepad {
 
 	public boolean getDPadUp() {
 		return joy.getRawAxis(AXIS_DPAD_VERTICAL) > 0.05;
-	}
-
-	// get number of times toggle buttons have been pressed
-	// to add something to the press HashMap, just create a public boolean
-	// getSomething()
-	// method in this class, and it will automatically be added with the key
-	// "Something"
-
-	public int getLBPresses() {
-		return press.getPresses("LB");
-	}
-
-	public int getRBPresses() {
-		return press.getPresses("RB");
-	}
-
-	public int getAPresses() {
-		return press.getPresses("A");
-	}
-
-	public int getBPresses() {
-		return press.getPresses("B");
-	}
-
-	public int getXPresses() {
-		return press.getPresses("X");
-	}
-
-	public int getYPresses() {
-		return press.getPresses("Y");
-	}
-
-	public int getStartPresses() {
-		return press.getPresses("Start");
-	}
-
-	public int getBackPresses() {
-		return press.getPresses("Back");
 	}
 
 	// Rumble
