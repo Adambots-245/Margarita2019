@@ -95,7 +95,8 @@ public class Robot extends IterativeRobot {
       
       Elevator.elevator(Gamepad.secondary.getLeftY());
       
-
+      Shooter.shoot(Gamepad.secondary.getRightTrigger());
+  
   }
 
   /**
