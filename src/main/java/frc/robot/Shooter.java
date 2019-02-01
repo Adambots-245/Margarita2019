@@ -2,7 +2,7 @@ package frc.robot;
 
 public class Shooter{
 
-    public static void shoot(double trigger){
+    public static void shoot(double trigger) {
         double shooterSpeed;
         if (trigger != 0) {
             shooterSpeed = trigger;
@@ -11,5 +11,5 @@ public class Shooter{
         }
         Actuators.getShooterTop().set(shooterSpeed);
     }
-    
+        
 }
