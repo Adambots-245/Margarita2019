@@ -20,11 +20,8 @@ public static final double TURRET_STOP = 0.0;
 
 public static final double SHOOTER_STOP = 0.0;
 
-<<<<<<< HEAD
 public static final int RAMP_TIP_MOTOR = 10;
-=======
 public static final int TURRET_LEFT_LIMIT_SWITCH = 4;
 public static final int TURRET_RIGHT_LIMIT_SWITCH = 5;
->>>>>>> sensors
 
 }
