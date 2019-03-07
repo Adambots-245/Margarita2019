@@ -5,11 +5,13 @@ public class Shooter{
     public static void shoot(double trigger){
         double shooterSpeed;
         if (trigger != 0) {
-            shooterSpeed = trigger;
+            shooterSpeed = Constants.SHOOTER_MULTIPLIER * trigger;
         } else {
             shooterSpeed = Constants.SHOOTER_STOP;
         }
-        Actuators.getShooterTop().set(shooterSpeed);
+        //invert
+        //shooterSpeed = -1 * shooterSpeed;
+        Actuators.getShooter().set(shooterSpeed);
     }
     
 }

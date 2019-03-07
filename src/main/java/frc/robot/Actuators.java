@@ -1,58 +1,60 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.util.WPILibVersion;
+import edu.wpi.first.wpilibj.DigitalOutput;
+import edu.wpi.first.wpilibj.Servo;
+import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.VictorSP;
 
-public class Actuators{
+public class Actuators {
 
-private static VictorSP chassisLeftMaster;
-private static VictorSP chassisLeftSlave;
-private static VictorSP chassisRightMaster;
-private static VictorSP chassisRightSlave;
-private static VictorSP ballInFeedElevator;
-private static VictorSP turret;
-private static VictorSP shooterTop;
-private static VictorSP shooterBottom;
+    private static VictorSP chassisLeft;
+    private static VictorSP chassisRight;
+    private static VictorSP ballInFeedElevator;
+    private static VictorSP turret;
+    private static VictorSP shooter;
+    private static Servo servo1;
+    private static VictorSP indexingRoller;
+    //private static DigitalOutput servo2;
 
-public static void init() {
+    public static void init() {
 
-chassisLeftMaster = new VictorSP(Constants.CHASSIS_LEFT_MASTER);
-chassisLeftSlave = new VictorSP(Constants.CHASSIS_LEFT_SLAVE);
-chassisRightMaster = new VictorSP(Constants.CHASSIS_RIGHT_MASTER);
-chassisRightSlave = new VictorSP(Constants.CHASSIS_RIGHT_SLAVE);
-ballInFeedElevator = new VictorSP(Constants.BALL_IN_FEED_ELEVATOR);
-turret = new VictorSP(Constants.TURRET);
-shooterTop = new VictorSP(Constants.SHOOTER_TOP);
-shooterBottom = new VictorSP(Constants.SHOOTER_BOTTOM);
+        chassisLeft = new VictorSP(Constants.CHASSIS_LEFT);
+        chassisRight = new VictorSP(Constants.CHASSIS_RIGHT);
+        ballInFeedElevator = new VictorSP(Constants.BALL_IN_FEED_ELEVATOR);
+        turret = new VictorSP(Constants.TURRET);
+        shooter = new VictorSP(Constants.SHOOTER);
+        servo1 = new Servo(Constants.GEAR_SHIFT_SERVO_ONE_PORT);
+        //servo2 = new DigitalOutput(Constants.GEAR_SHIFT_SERVO_TWO_PORT);
+        indexingRoller = new VictorSP(Constants.SHOOTER_IN_FEED);
 
-}
+    }
 
-public static VictorSP getChassisLeftMaster() {
-    return chassisLeftMaster;
-}
-public static VictorSP getChassisLeftSlave() {
-    return chassisLeftSlave;
-}
-public static VictorSP getChassisRightMaster() {
-    return chassisRightMaster;
-}
-public static VictorSP getChassisRightSlave() {
-    return chassisRightSlave;
-}
+    public static VictorSP getChassisLeft() {
+        return chassisLeft;
+    }
 
-public static VictorSP getBallInFeedElevator() {
-    return ballInFeedElevator;
-}
-public static VictorSP getTurret() {
-    return turret;
-}
+    public static VictorSP getChassisRight() {
+        return chassisRight;
+    }
+    public static Servo getServo1() {
+        return servo1;
+    }
+    //public static DigitalOutput getServo2() {
+   //     return servo2;
+    //}
+    public static VictorSP getBallInFeedElevator() {
+        return ballInFeedElevator;
+    }
+    public static VictorSP getIndexingRoller(){
+        return indexingRoller;
+    }
 
-public static VictorSP getShooterTop() {
-    return shooterTop;
-}
+    public static VictorSP getTurret() {
+        return turret;
+    }
 
-public static VictorSP getShooterBottom() {
-    return shooterBottom;
-}
-
+    public static VictorSP getShooter() {
+        return shooter;
+    }
 }

@@ -29,7 +29,8 @@ public class Robot extends IterativeRobot {
    * used for any initialization code.
    */
   @Override
-  public void robotInit() {    
+  public void robotInit() {  
+    Gamepad.init();  
     Actuators.init();
 
     m_chooser.setDefaultOption("Default Auto", kDefaultAuto);
@@ -90,12 +91,13 @@ public class Robot extends IterativeRobot {
   @Override
   public void teleopPeriodic() {
       Drive.tankdrive(Gamepad.primary.getLeftY(), Gamepad.primary.getRightX());
-      
-      Elevator.elevator(Gamepad.secondary.getLeftY());
-
+      Drive.setGear(Gamepad.primary.getY(), Gamepad.primary.getA());
+      Elevator.combinedIntake(Gamepad.secondary.getLeftY());
+      //Elevator.elevator(Gamepad.secondary.getLeftY());
+      //Elevator.indexingRoller(Gamepad.secondary.getLB(), Gamepad.secondary.getRB());
       Turret.turret(Gamepad.secondary.getRightX());
       
-      Shooter.shoot(Gamepad.secondary.getRightTrigger());
+      Shooter.shoot(Gamepad.secondary.getTriggers());
   
   }
 
